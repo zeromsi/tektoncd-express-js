@@ -11,11 +11,10 @@ RUN mkdir -p /home/node/app/node_modules && chown -R node:node /home/node/app
 
 WORKDIR /home/node/app
 
-COPY package*.json ./
-
 COPY repo_checker.sh /repo_checker.sh
 
 RUN /repo_checker.sh
+COPY package*.json ./
 
 RUN npm install
 
